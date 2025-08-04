@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.5 on win32)" generated="2025-08-04T13:57:16.563808" rpa="false" schemaversion="5">
+<suite id="s1" name="Login Test" source="C:\Users\Rajesh C\PycharmProjects\Guvi_Robot_Framework\Robot_Sparebin_Industries\tests\login_test.robot">
+<kw name="Open Browser To Login Page" owner="keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-04T13:57:16.795773" level="INFO">Opening browser 'Chrome' to base url 'https://robotsparebinindustries.com/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-04T13:57:16.795537" elapsed="2.119465"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-04T13:57:23.915819" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-04T13:57:18.915249" elapsed="5.000736"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-04T13:57:23.916201" elapsed="0.030272"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id:username</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-08-04T13:57:23.946705" elapsed="0.010891"/>
+</kw>
+<status status="PASS" start="2025-08-04T13:57:16.794988" elapsed="7.162785"/>
+</kw>
+<test id="s1-t1" name="Verify Successful Login Functionality" line="16">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-04T13:57:24.061819" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Before_login_Screenshot.png"&gt;&lt;img src="Before_login_Screenshot.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>Before_login_Screenshot.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-04T13:57:23.958480" elapsed="0.103453"/>
+</kw>
+<kw name="Login With Valid Credentials" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-04T13:57:24.062967" level="INFO">Typing text 'maria' into text field 'id:username'.</msg>
+<arg>id:username</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-04T13:57:24.062775" elapsed="0.067200"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-04T13:57:24.130571" level="INFO">Typing text 'thoushallnotpass' into text field 'id:password'.</msg>
+<arg>id:password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-04T13:57:24.130222" elapsed="0.056033"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-04T13:57:27.187375" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-04T13:57:24.186532" elapsed="3.001205"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-04T13:57:27.188154" level="INFO">Clicking button 'xpath=//button[@class='btn btn-primary']'.</msg>
+<arg>xpath=//button[@class='btn btn-primary']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-04T13:57:27.187924" elapsed="0.056242"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-04T13:57:37.245305" level="INFO">Slept 10 seconds.</msg>
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-04T13:57:27.244568" elapsed="10.000965"/>
+</kw>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2025-08-04T13:57:24.062420" elapsed="13.183333"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-04T13:57:37.330311" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="After_login_text_contains_maria.png"&gt;&lt;img src="After_login_text_contains_maria.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>After_login_text_contains_maria.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-04T13:57:37.246460" elapsed="0.083988"/>
+</kw>
+<kw name="Verify Login Successful and Element Text should be maria" owner="keywords">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>//span[@class='username']</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-08-04T13:57:37.331188" elapsed="0.008789"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-04T13:57:37.340492" level="INFO">Verifying element '//span[@class='username']' contains exact text 'maria'.</msg>
+<arg>//span[@class='username']</arg>
+<arg>maria</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-04T13:57:37.340188" elapsed="0.014994"/>
+</kw>
+<status status="PASS" start="2025-08-04T13:57:37.330865" elapsed="0.024434"/>
+</kw>
+<kw name="Logout Of Application" owner="keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-04T13:57:37.356068" level="INFO">Clicking button 'id:logout'.</msg>
+<arg>id:logout</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-04T13:57:37.355892" elapsed="0.057736"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//button[@class='btn btn-primary']</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-08-04T13:57:37.413835" elapsed="0.006272"/>
+</kw>
+<status status="PASS" start="2025-08-04T13:57:37.355624" elapsed="0.064608"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-04T13:57:37.510740" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Logout.png"&gt;&lt;img src="Logout.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>Logout.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-04T13:57:37.420532" elapsed="0.090374"/>
+</kw>
+<status status="PASS" start="2025-08-04T13:57:23.957872" elapsed="13.553396"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-08-04T13:57:37.512212" elapsed="2.205140"/>
+</kw>
+<status status="PASS" start="2025-08-04T13:57:16.565595" elapsed="23.151862"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login Test" id="s1" pass="1" fail="0" skip="0">Login Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
